@@ -1,0 +1,29 @@
+# Spring Boot
+spring:
+  artemis:
+    mode: NATIVE
+    host: localhost
+    port: 61616
+    user: admin
+    password: admin
+
+# IBM MQ
+ibm:
+  mq:
+    queueManager: QM1
+    channel: DEV.APP.SVRCONN
+    connName: localhost(1414)
+    user: app
+    password: passw0rd
+
+# Camel Spring Boot
+camel:
+  springboot:
+    name: core-console-consumer
+    main-run-controller: true
+
+# Logging
+logging:
+  level:
+    #root: ERROR
+    org.apache.camel.examples: DEBUG
