@@ -28,3 +28,5 @@ mvn clean install
 cd $PROJECT_ROOT
 mvn spring-boot:run
 ```
+
+You can access the web console at http://localhost:8080/actuator/hawtio
