@@ -33,6 +33,7 @@ limitations under the License.
     <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
     <artemis.version>2.18.0</artemis.version>
     <ibmmq.version>2.0.0</ibmmq.version>
+    <hawtio.version>2.14.4</hawtio.version>
   </properties>
 
   <dependencyManagement>
@@ -63,6 +64,11 @@ limitations under the License.
         <version>${ibmmq.version}</version>
       </dependency>
       <dependency>
+        <groupId>io.hawt</groupId>
+        <artifactId>hawtio-springboot</artifactId>
+        <version>${hawtio.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <version>${spring-boot.version}</version>
@@ -82,7 +88,11 @@ limitations under the License.
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -107,6 +117,10 @@ limitations under the License.
     <dependency>
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.hawt</groupId>
+      <artifactId>hawtio-springboot</artifactId>
     </dependency>
   </dependencies>
 

@@ -1,3 +1,23 @@
+# Servlet Container & Health Setup
+server:
+  address: 0.0.0.0
+management:
+  endpoints:
+    enabled: false
+    health:
+      enabled: true
+    jolokia:
+      enabled: true
+    hawtio:
+      enabled: true
+    web:
+      exposure:
+        include: hawtio,jolokia,health,info
+        
+# Hawtio
+hawtio:
+  authenticationEnabled: false
+
 # Spring Boot
 spring:
   artemis:
