@@ -11,14 +11,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.examples;
+package com.redhat.examples;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "org.apache.camel.examples", "org.springframework.boot.autoconfigure.jms.artemis", "com.ibm.mq.spring.boot" })
+@ComponentScan(basePackages = { "com.redhat.examples", "org.springframework.boot.autoconfigure.jms.artemis", "com.ibm.mq.spring.boot" })
 public class Application {
 
   public static void main(String[] args) {

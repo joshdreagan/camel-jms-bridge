@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.examples;
+package com.redhat.examples;
 
 import com.ibm.mq.spring.boot.MQConfigurationProperties;
 import org.apache.camel.ExchangePattern;
@@ -34,8 +34,8 @@ public class CamelRouteConfiguration extends RouteBuilder {
   @Override
   public void configure() {
 
-    from("jms:topic://foo?connectionFactory=#artemisJmsConnectionFactory&disableReplyTo=true&subscriptionName=jms-bridge&subscriptionDurable=true&subscriptionShared=true")
-      .to(ExchangePattern.InOnly, "jms:queue://DEV.QUEUE.1?connectionFactory=#ibmmqJmsConnectionFactory")
+    from("jms:queue://DEV.QUEUE.1?connectionFactory=#ibmmqJmsConnectionFactory")
+      .to(ExchangePattern.InOnly, "jms:queue://foo?connectionFactory=#artemisJmsConnectionFactory")
     ;
   }
 }

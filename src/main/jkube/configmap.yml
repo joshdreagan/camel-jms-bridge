@@ -1,0 +1,8 @@
+metadata:
+  name: ${project.artifactId}-configmap
+data:
+  application.properties: |-
+    spring.artemis.broker-url=tcp://ex-aa0-core-0-svc:61616
+    ibm.mq.queue-manager=QM1
+    ibm.mq.channel=DEV.APP.SVRCONN
+    ibm.mq.conn-name=localhost(1414)

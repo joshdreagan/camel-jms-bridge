@@ -3,47 +3,39 @@ server:
   address: 0.0.0.0
 management:
   endpoints:
-    enabled: false
+    web.exposure.include: info,health,camelroutes
+  endpoint:
     health:
       enabled: true
-    jolokia:
+    camelroutes:
       enabled: true
-    hawtio:
-      enabled: true
-    web:
-      exposure:
-        include: hawtio,jolokia,health,info
-        
-# Hawtio
-hawtio:
-  authenticationEnabled: false
+      read-only: true
 
 # Spring Boot
 spring:
   artemis:
     mode: NATIVE
-    host: localhost
-    port: 61616
+    broker-url: tcp://localhost:61616
     user: admin
     password: admin
 
 # IBM MQ
 ibm:
   mq:
-    queueManager: QM1
+    queue-manager: QM1
     channel: DEV.APP.SVRCONN
-    connName: localhost(1414)
+    conn-name: localhost(1414)
     user: app
     password: passw0rd
 
 # Camel Spring Boot
 camel:
   springboot:
-    name: core-console-consumer
+    name: camel-jms-bridge
     main-run-controller: true
 
 # Logging
 logging:
   level:
     #root: ERROR
-    org.apache.camel.examples: DEBUG
+    com.redhat.examples: DEBUG
