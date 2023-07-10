@@ -2,7 +2,7 @@ metadata:
   name: ${project.artifactId}-configmap
 data:
   application.properties: |-
-    spring.artemis.broker-url=tcp://ex-aa0-core-0-svc:61616
+    spring.artemis.broker-url=tcp://artemis-broker-core-0-svc.amq.svc:5000
     ibm.mq.queue-manager=QM1
     ibm.mq.channel=DEV.APP.SVRCONN
-    ibm.mq.conn-name=localhost(1414)
+    ibm.mq.conn-name=mq.ibm.svc(1414)

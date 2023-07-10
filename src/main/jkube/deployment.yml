@@ -20,12 +20,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: ${project.artifactId}-secret
-              key: IBM_MQ_USER
+              key: ibm.mq.user
         - name: IBM_MQ_PASSWORD
           valueFrom:
             secretKeyRef:
               name: ${project.artifactId}-secret
-              key: IBM_MQ_PASSWORD
+              key: ibm.mq.password
         resources:
           requests:
             cpu: "0.5"

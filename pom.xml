@@ -167,5 +167,34 @@ limitations under the License.
       </plugin>
     </plugins>
   </build>
+  
+  <profiles>
+    <profile>
+      <id>openshift</id>
+      <properties>
+        <jkube.openshift.generateRoute>false</jkube.openshift.generateRoute>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.jkube</groupId>
+            <artifactId>openshift-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+                <configuration>
+                  <generateRoute>false</generateRoute>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 
 </project>
